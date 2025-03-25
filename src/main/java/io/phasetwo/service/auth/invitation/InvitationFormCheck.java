@@ -60,7 +60,7 @@ public class InvitationFormCheck implements FormAction, FormActionFactory {
                     }
             ).count();
             if(!(invCnt > 0)) {
-                errors.add(new FormMessage(RegistrationPage.FIELD_EMAIL, "non sei stato invitato mi disp"));
+                errors.add(new FormMessage(RegistrationPage.FIELD_EMAIL, "registration.restricted.invitation.only"));
             }
         }
 
@@ -69,6 +69,7 @@ public class InvitationFormCheck implements FormAction, FormActionFactory {
             formData.remove(RegistrationPage.FIELD_EMAIL);
             context.validationError(formData, errors);
         } else {
+
             context.success();
         }
     }
